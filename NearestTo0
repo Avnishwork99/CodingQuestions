@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int findClosestNumber(vector<int>& nums) {
+        //dabba to store probable ans
+        int proAns = INT_MAX; //max capacity of integer
+        //sbke pass check krna h
+        //[-4,-2,1,4,8]
+        for(int i=0;i<nums.size();i++){
+            //length form zero
+            int len = nums[i]-0;
+            // -4-0 = -4
+            if(len<0){
+                len = len*-1;
+            }
+            //dabbe ko kb update krna h
+            //jb hme choti lenth milegi
+            int proLen = proAns;
+            if(proAns<0)
+                proLen = proLen*-1;
+            if(proLen>=len){
+                if(proLen==len && proAns>nums[i])
+                    continue;
+                else
+                    proAns = nums[i];
+            }
+        }
+        return proAns;
+    }
+};
