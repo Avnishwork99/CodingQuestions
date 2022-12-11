@@ -1,0 +1,9 @@
+bool find(int[] arr, int x){
+    //return if the x is present or not
+}
+
+int main(){
+    int arr[] = {5,7,8,9,19,54,78,4,67};
+    cin>>x;
+    return find(arr,x);
+}
