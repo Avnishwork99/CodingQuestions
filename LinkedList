@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class Node{
+    int val;
+    Node next;
+
+    //put the data in the linked list 
+    Node(int data){
+        val = data;
+        next = null;
+    }
+}
+
+int main(){
+    Node head; //made a object of class Node
+    Node SecondEle;
+    Node ThirdEle; //67
+    Node FourthEle;//97
+    head.val = 27;
+    SecondEle.val = 45;
+    head.next = SecondEle;
+    ThirdEle.val = 67;
+    SecondEle.next = ThirdEle;
+    FourthEle.val = 97;
+    ThirdEle.next = FourthEle;
+
+    //we need a traverasal pointer
+    Node pointer;
+    pointer = head;
+    //traversal
+    while(pointer!=null){
+        cout<<pointer.val<<"  ";
+        pointer = pointer.next;
+    }
+
+    return 0;
+}
