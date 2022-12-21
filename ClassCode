@@ -1,0 +1,48 @@
+#include <iostream>
+
+using namespace std;
+
+class Student{
+    public:
+        string Name;
+        int RollNumber;
+        long int PhoneNumber;
+};
+
+class ClgStudent{
+    public:
+        string Name;
+        int RollNumber;
+        long int PhoneNumber;
+    ClgStudent(){
+        Name = "Varun";
+        RollNumber = 0;
+        PhoneNumber = 4535434345;
+    }
+};
+
+int main()
+{
+    cout<<"Hello World"<<endl;
+    Student st1; //error
+    st1.Name = "Varun";
+    st1.RollNumber = 1;
+    st1.PhoneNumber = 9568665965;
+    Student st2;
+    st2.Name = "Avnish";
+    st2.RollNumber = 2;
+    st2.PhoneNumber = 274624627467;
+    
+    Student dataOfClass[2];
+    
+    dataOfClass[0] = st1;
+    dataOfClass[1] = st2;
+    for(int i=0;i<2;i++){
+        cout<<dataOfClass[i].Name<<"  "<<dataOfClass[i].RollNumber<<endl;
+    }
+
+    ClgStudent clgSt; //data missing
+    clgSt.Name = "Adesh";
+    cout<<"Constructor"<<"     "<<clgSt.Name<<endl;
+    return 0;
+}
