@@ -1,3 +1,7 @@
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
 class Solution {
 public:
     int numJewelsInStones(string jewels, string stones) {
@@ -14,18 +18,23 @@ public:
                 map[c]=1;
             }
         }
-            for(int j=0;j<jewels.length();j++){
-                char a=jewels.at(j);
-             while(it!=map.end()){
-                 if(it->first==a){
-                     ans=it->second;
-                     finalans=finalans+ans;
-                      }
-                     it++;
-             }      
-                
+
+        //tyou have to check weather jewels is in stones or not and add the values you don't need to iterate
+        for(int j=0;j<jewels.length();j++){
+            char a=jewels.at(j);
+            if(map.find(a)!=map.end()){
+                finalans += map[a];
             }
-            return finalans;
-            }
-        
+        }
+        return finalans;
+    }    
 };
+
+int main(){
+    Solution sln;
+    string jel = "aA";
+    string stone = "aAAbbxx";
+    int x = sln.numJewelsInStones(jel,stone);
+    cout<<x;
+    return 0;
+}
